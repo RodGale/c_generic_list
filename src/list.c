@@ -43,6 +43,7 @@ static void list_erase_body(list_iter_t *iter, list_node_t *to_erase)
 {
 	list_node_t *prev = to_erase->n_prev;
 	list_node_t *next = to_erase->n_next;
+
 	if (prev)
 		prev->n_next = next;
 	else
