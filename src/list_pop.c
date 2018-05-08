@@ -21,8 +21,8 @@ void list_pop_front(list_t *list)
 		if (list->l_destructor)
 			list->l_destructor(old_start->n_data);
 		free(old_start);
+		list->l_size -= 1;
 	}
-	list->l_size -= 1;
 }
 
 void list_pop_back(list_t *list)
@@ -38,6 +38,6 @@ void list_pop_back(list_t *list)
 		if (list->l_destructor)
 			list->l_destructor(old_end->n_data);
 		free(old_end);
+		list->l_size -= 1;
 	}
-	list->l_size -= 1;
 }
