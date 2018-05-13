@@ -52,20 +52,20 @@ static void list_erase_body(list_iter_t *iter, list_node_t *to_erase)
 		next->n_prev = prev;
 	else
 		iter->li_list->l_start = prev;
-	iter->li_list->l_destructor(to_erase->n_data);
+	if (iter->li_list->l_destructor)
+		iter->li_list->l_destructor(to_erase->n_data);
 	free(to_erase);
 	iter->li_list->l_size -= 1;
-
+	iter->li_node = next;
 }
 
 void list_erase(list_iter_t *iter)
 {
-	list_node_t *to_erase = NULL;
+	list_node_t *to_erase = iter->li_node;
 
-	if (iter->li_node)
-		to_erase = iter->li_node->n_prev;
-	else if (iter->li_list->l_size == 1)
+	if (iter->li_list->l_size == 1) {
 		list_pop_front(iter->li_list);
-	if (to_erase)
+		iter->li_node = NULL;
+	} else if (to_erase)
 		list_erase_body(iter, to_erase);
 }

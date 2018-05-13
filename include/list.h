@@ -54,5 +54,7 @@ void list_erase(list_iter_t *iter);
 
 list_iter_t *list_iter_create(list_t *list, list_iter_mode_t mode);
 void *list_iter_next(list_iter_t *iter);
+void *list_iter_access(list_iter_t *iter);
+list_iter_t *list_find_addr(list_t *list, void *addr);
 
 #endif /* !LIST_H_ */

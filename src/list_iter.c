@@ -35,6 +35,13 @@ list_iter_t *list_iter_create(list_t *list, list_iter_mode_t mode)
 	return (iter);
 }
 
+void *list_iter_access(list_iter_t *iter)
+{
+	if (iter->li_node)
+		return (iter->li_node->n_data);
+	return (NULL);
+}
+
 void *list_iter_next(list_iter_t *iter)
 {
 	void *ret;

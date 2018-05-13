@@ -1,0 +1,10 @@
+*.o
+*.so
+*~
+*.gch
+*.out
+vgcore*
+*.log
+
+coverage/
+wiki/
