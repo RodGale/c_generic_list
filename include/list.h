@@ -8,7 +8,7 @@
 #ifndef LIST_H_
 	#define LIST_H_
 
-	#include "stddef.h"
+	#include <stddef.h>
 
 	#define LIST_ERR -1
 	#define LIST_OK 0
@@ -36,7 +36,6 @@ typedef struct			s_list_iterator {
 	list_node_t		*li_node;
 	list_iter_mode_t	li_mode;
 }				list_iter_t;
-
 
 /*
 ** Prototypes

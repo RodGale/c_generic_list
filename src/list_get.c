@@ -25,4 +25,3 @@ size_t list_get_size(list_t *list)
 {
 	return list->l_size;
 }
-

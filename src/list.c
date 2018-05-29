@@ -34,6 +34,8 @@ static void list_node_destroy_rec(list_node_t *node,
 
 void list_destroy(list_t *list)
 {
+	if (!list)
+		return;
 	if (list->l_start)
 		list_node_destroy_rec(list->l_start, list->l_destructor);
 	free(list);
