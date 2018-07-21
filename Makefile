@@ -22,7 +22,7 @@ OBJS		=	$(SRCS:.c=.o)
 
 TEST		=	unit_tests.out
 
-SRCS_TEST	=	tests/test-list.c
+SRCS_TEST	=	tests/list.c
 
 SRCS_TEST	+=	$(OBJS)
 
