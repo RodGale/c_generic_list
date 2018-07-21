@@ -9,6 +9,7 @@
 	#define LIST_H_
 
 	#include <stddef.h>
+	#include <stdbool.h>
 
 	#define LIST_ERR -1
 	#define LIST_OK 0
@@ -55,5 +56,7 @@ list_iter_t *list_iter_create(list_t *list, list_iter_mode_t mode);
 void *list_iter_next(list_iter_t *iter);
 void *list_iter_access(list_iter_t *iter);
 list_iter_t *list_find_addr(list_t *list, void *addr);
+bool list_find_and_delete_addr(list_t *list, void *addr);
+void list_iter_init(list_iter_t *iter, list_t *list, list_iter_mode_t mode);
 
 #endif /* !LIST_H_ */

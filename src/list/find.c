@@ -22,3 +22,14 @@ list_iter_t *list_find_addr(list_t *list, void *addr)
 	free(iter);
 	return (NULL);
 }
+
+bool list_find_and_delete_addr(list_t *list, void *addr)
+{
+	list_iter_t *iter = list_find_addr(list, addr);
+
+	if (iter) {
+		list_erase(iter);
+		free(iter);
+	}
+	return ((iter != NULL));
+}

@@ -11,12 +11,12 @@ RM		=	rm -vf
 
 NAME		=	libacp_list.so
 
-SRCS		=	src/list.c	\
-			src/list_get.c	\
-			src/list_iter.c	\
-			src/list_pop.c	\
-			src/list_push.c	\
-			src/list_find.c
+SRCS		=	src/list/list.c	\
+			src/list/get.c	\
+			src/list/iter.c	\
+			src/list/pop.c	\
+			src/list/push.c	\
+			src/list/find.c
 
 OBJS		=	$(SRCS:.c=.o)
 

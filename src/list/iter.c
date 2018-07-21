@@ -24,14 +24,19 @@ void list_iter_set_mode(list_iter_t *iter, list_iter_mode_t mode)
 	}
 }
 
+void list_iter_init(list_iter_t *iter, list_t *list, list_iter_mode_t mode)
+{
+	iter->li_list = list;
+	list_iter_set_mode(iter, mode);
+}
+
 list_iter_t *list_iter_create(list_t *list, list_iter_mode_t mode)
 {
 	list_iter_t *iter = malloc(sizeof(list_iter_t));
 
 	if (!iter)
 		return (NULL);
-	iter->li_list = list;
-	list_iter_set_mode(iter, mode);
+	list_iter_init(iter, list, mode);
 	return (iter);
 }
 
